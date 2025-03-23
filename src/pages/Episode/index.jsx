@@ -1,10 +1,6 @@
 import {useNavigate, useParams, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {episodeService} from "../../services/EpisodeService.js";
-import ArrowLeftIcon from "../../assets/icons/left_arrow_icon.svg";
-import CharactersIcon from "../../assets/icons/characters_icon.svg";
-import CalendarIcon from "../../assets/icons/calendar_icon.svg";
-import HashtagIcon from "../../assets/icons/hashtag_icon.svg";
 
 function EpisodePage() {
     const [data, setData] = useState(null);

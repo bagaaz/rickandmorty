@@ -1,7 +1,6 @@
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { charactersService } from "../../services/CharactersService.js";
 import { useEffect, useState } from "react";
-import ArrowLeftIcon from "../../assets/icons/left_arrow_icon.svg";
 
 function CharacterPage() {
     const [data, setData] = useState(null);
