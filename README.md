@@ -6,6 +6,7 @@ Um sistema desenvolvido em **React** com **Vite** que consulta a [API do Rick an
 - [Recursos](#recursos)
 - [Funcionalidades](#funcionalidades)
 - [Tecnologias e Bibliotecas Utilizadas](#tecnologias-e-bibliotecas-utilizadas)
+- [Testes](#testes)
 - [Pré-requisitos](#pré-requisitos)
 - [Instalação](#instalação)
 - [Como Iniciar](#como-iniciar)
@@ -47,6 +48,20 @@ Um sistema desenvolvido em **React** com **Vite** que consulta a [API do Rick an
     - [API do Rick and Morty](https://rickandmortyapi.com/)
 - **Ferramentas de Qualidade:**
     - ESLint para padronização e qualidade de código
+
+## Testes
+- O projeto utiliza [Vitest](https://vitest.dev/) em conjunto com a [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) para realizar testes unitários e de integração.
+- Foram instaladas as seguintes bibliotecas para testes:
+  - `vitest`
+  - `@testing-library/react`
+  - `@testing-library/jest-dom`
+  - `@testing-library/user-event`
+
+- Para executar os testes, utilize o comando:
+    `npm run test`
+- ou, se preferir usar o yarn:
+    `yarn test`
+- Os testes estão organizados em arquivos com o sufixo `.test.jsx` e estão localizados nas mesmas pastas que os componentes ou serviços que testam.
 
 ## Pré-requisitos
 Antes de começar, certifique-se de ter instalado em sua máquina:
@@ -90,40 +105,53 @@ O servidor de desenvolvimento iniciará e você poderá acessar o projeto no nav
 A estrutura do projeto está organizada da seguinte forma:
 
 ```
-bagaaz-rickandmorty/
-├── README.md
-├── eslint.config.js
-├── index.html
-├── package.json
-├── vite.config.js
-└── src/
-    ├── App.jsx
-    ├── AppRoute.jsx
-    ├── index.css
-    ├── main.jsx
-    ├── assets/
-    │   └── icons/
-    ├── components/
-    │   ├── CharacterCard.jsx
-    │   ├── Pagination.jsx
-    │   └── Header/
-    │       └── index.jsx
-    ├── pages/
-    │   ├── Character/
-    │   │   └── index.jsx
-    │   ├── Episode/
-    │   │   └── index.jsx
-    │   ├── Location/
-    │   │   └── index.jsx
-    │   └── NotFound/
-    │       └── index.jsx
-    ├── schemas/
-    │   └── FilterCharactersSchema.js
-    └── services/
-        ├── CharactersService.js
-        ├── EpisodeService.js
-        ├── LocationService.js
-        └── RequestService.js
+Directory structure:
+└── rickandmorty/
+    ├── README.md
+    ├── eslint.config.js
+    ├── index.html
+    ├── package.json
+    ├── vite.config.js
+    ├── vitest.setup.js
+    └── src/
+        ├── App.jsx
+        ├── App.test.jsx
+        ├── AppRoute.jsx
+        ├── index.css
+        ├── main.jsx
+        ├── assets/
+        │   └── icons/
+        ├── components/
+        │   ├── CharacterCard.jsx
+        │   ├── CharacterCard.test.jsx
+        │   ├── Pagination.jsx
+        │   ├── Pagination.test.jsx
+        │   └── Header/
+        │       └── index.jsx
+        ├── pages/
+        │   ├── Character/
+        │   │   ├── index.jsx
+        │   │   └── index.test.jsx
+        │   ├── Episode/
+        │   │   ├── index.jsx
+        │   │   └── index.test.jsx
+        │   ├── Location/
+        │   │   ├── index.jsx
+        │   │   └── index.test.jsx
+        │   └── NotFound/
+        │       ├── index.jsx
+        │       └── index.test.jsx
+        ├── schemas/
+        │   ├── FilterCharactersSchema.js
+        │   └── FilterCharactersSchema.test.js
+        └── services/
+            ├── CharactersService.js
+            ├── CharactersService.test.js
+            ├── EpisodeService.js
+            ├── EpisodeService.test.js
+            ├── LocationService.js
+            ├── LocationService.test.js
+            └── RequestService.js
 ```
 
 - `src/`: Contém todos os arquivos fonte do projeto.
